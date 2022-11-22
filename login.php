@@ -6,7 +6,7 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
         header("location: index.php");
     }
     else{
-        echo "ur password is incorrect";
+        echo "<br>ur password is incorrect<br>";
         
     }
 }
@@ -14,7 +14,9 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
 
 <form action="login.php" method="POST">
     <label for="username">Username</label>
-    <input type="text" name="username" id="username" placeholder="username">
+    <input type="text" name="username" id="username" placeholder="username" value="<?php if (isset($_POST["username"])){
+        echo $_POST["username"];
+    }?>">
     <br><br>
     <label for="password">Password</label>
     <input type="password" name="password" id="password" placeholder="password">
