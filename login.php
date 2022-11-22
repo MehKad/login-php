@@ -1,5 +1,7 @@
 <?php
 session_start();
+if(array_key_exists("username" , $_SESSION))
+header("Location:index.php");
 if(isset($_POST["username"]) && isset($_POST["password"])){
     if ($_POST["password"] == "123") {
         $_SESSION["username"]= htmlspecialchars($_POST["username"]);
@@ -7,7 +9,6 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
     }
     else{
         echo "<br>ur password is incorrect<br>";
-        
     }
 }
 ?>
